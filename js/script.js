@@ -5,7 +5,6 @@ createApp({
         return {
             title: 'Guarda che belle le immaginette',
 
-
             imgCarosello: [
                 {
                     image: 'img/01.webp',
@@ -29,13 +28,29 @@ createApp({
                     text: 'Marvel\'s Avengers is an epic, third-person, action-adventure game that combines an original, cinematic story with single-player and co-operative gameplay.',
                 }
             ],
+
             activeImg: 0,
 
         }
     },
 
     methods: {
-
+        ClickSx() {
+            if (this.activeImg > 0) {
+                this.activeImg--;
+            }
+            else {
+                this.activeImg = this.imgCarosello.length - 1
+            }
+        },
+        ClickDx() {
+            if (this.activeImg != this.imgCarosello.length - 1) {
+                this.activeImg++;
+            }
+            else {
+                this.activeImg = 0;
+            }
+        }
     },
 
 }).mount('#app')
